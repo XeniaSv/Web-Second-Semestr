@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+body{
+  background-color: #CEF0F8;
+  overflow-x: hidden;
+  font-family: 'Inter';
+
+  display: grid;
+  width: 100%;
+}
+
+header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5vmax;
+  align-items: center;
+  justify-items: center;
+}
+
+h1{
+  font-weight: bold;
+  font-size: 2.5vmax;
+  color: #6095A5;
+}
+
+.refreshButton:hover {
+  background: #6095A5;
+}
+
+
+.refreshButton {
+  border-radius: 1vmax;
+  width: 18.5vmax;
+  height: 3.5vmax;
+  font-style: medium;
+  font-size: 1.3vmax;
+  text-align: center;
+
+  border: none;
+  outline: none;
+
+  background: #215D70;
+  color: #E7FBFF;
+}
+
+main{
+  display: grid;
+  margin: 0% 5% 5% 5%;
+
+  background: #E7FBFF;
+}
+
+.gridMainCity{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 0%;
+}
+
+h2{
+font-weight: lighter;
+font-size: 2vmax;
+color: #215D70;
+text-align: left;
+padding-left: 10%;
+}
+
+
+.sunMain{
+  float:left;
+  width: 12vmax;
+  height: 12vmax;
+  padding-left: 7%;
+}
+
+.mainDegree{
+  float:left;
+  font-weight: lighter;
+  font-size: 6vmax;
+  color: #6095A5;
+  margin-left: 5%;
+  margin-top: 5%;
+}

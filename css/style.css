@@ -80,3 +80,41 @@ padding-left: 10%;
   margin-left: 5%;
   margin-top: 5%;
 }
+
+.mainInfo{
+
+  font-weight:lighter;
+  font-size: 1.3vmax;
+  color: #E7FBFF;
+}
+
+.infoRectangle {
+width: 30vmax;
+height: 3vmax;
+background: #79BACE;
+border-radius: 1vmax;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 13%;
+}
+
+li{
+  margin-bottom: 2%;
+}
+
+.nameIndicators{
+  float:left;
+  margin-left: 5%;
+  margin-top: 2%
+}
+
+.indicators{
+float:right;
+font-style: medium;
+font-size: 0.8vmax;
+margin-top: 3%;
+margin-right: 5%;
+color: #E7FBFF;
+}

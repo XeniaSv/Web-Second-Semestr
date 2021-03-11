@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Weather forecast</title>
@@ -11,35 +11,156 @@
   <body>
     <header>
       <h1>Погода здесь</h1>
-      <button type="submit" class="refreshButton">Обновить геолокацию</button>
+      <button type="refresh" class="refreshButton">Обновить геолокацию</button>
     </header>
     <main>
-    <div class="gridMainCity">
-      <div class="mainCity">
-        <h2>Saint-Petersburg</h2>
-        <img src="resources/sun.svg" alt="sun" class="sunMain">
-        <div class="mainDegree">8°C</div>
+      <div class="gridMainCity">
+        <div>
+          <h2>Saint-Petersburg</h2>
+          <div class="mainCityInfo">
+            <img src="resources/sun.svg" class="iconMain">
+            <p class="mainTempurature">8°C</p>
+          </div>
+        </div>
+
+        <div class="mainIndicators">
+          <ul>
+            <li> <p class="nameIndicators">Ветер</p>
+              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
+
+            <li> <p class="nameIndicators">Облачность</p>
+              <p class="indicators" >Broken clouds</p> </li>
+
+            <li> <p class="nameIndicators">Давление</p>
+              <p class="indicators" >1013 hpa</p> </li>
+
+            <li> <p class="nameIndicators">Влажность</p>
+              <p class="indicators" >52 %</p> </li>
+
+            <li> <p class="nameIndicators">Координаты</p>
+              <p class="indicators" >[59.88, 30.42]</p> </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="mainInfo">
-        <ul>
-          <li> <div class="infoRectangle"> <p class="nameIndicators">Ветер</p>
-            <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </div> </li>
+      <div class="divFavourites">
+          <h3>Избранное</h3>
 
-          <li> <div class="infoRectangle"> <p class="nameIndicators">Облачность</p>
-            <p class="indicators" >Broken clouds</p> </div> </li>
-
-          <li> <div class="infoRectangle"> <p class="nameIndicators">Давление</p>
-            <p class="indicators" >1013 hpa</p> </div> </li>
-
-          <li> <div class="infoRectangle"> <p class="nameIndicators">Влажность</p>
-            <p class="indicators" >52 %</p> </div> </li>
-
-          <li> <div class="infoRectangle"> <p class="nameIndicators">Координаты</p>
-            <p class="indicators" >[59.88, 30.42]</p> </div> </li>
-        </ul>
+          <div class="inputDiv">
+            <input type="text" placeholder="Добавить город" class="inputText">
+            <button type="submit" class="smallButton">+</button>
+          </div>
       </div>
-    </div>
+
+      <div class="Cities">
+        <div class="city">
+          <div class="cityInformation">
+            <h4>Moscow</h4>
+            <div class="cityImgDegree">
+              <p class="cityTempurature">5°C</p>
+              <img src="resources/sun.svg" class="iconCity">
+            </div>
+            <button type="submit" class="smallButton">&times;</button>
+          </div>
+          <ul>
+            <li> <p class="nameIndicators">Ветер</p>
+              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
+
+            <li> <p class="nameIndicators">Облачность</p>
+              <p class="indicators" >Broken clouds</p> </li>
+
+            <li> <p class="nameIndicators">Давление</p>
+              <p class="indicators" >1013 hpa</p> </li>
+
+            <li> <p class="nameIndicators">Влажность</p>
+              <p class="indicators" >52 %</p> </li>
+
+            <li> <p class="nameIndicators">Координаты</p>
+              <p class="indicators" >[59.88, 30.42]</p> </li>
+          </ul>
+        </div>
+
+        <div class="city">
+          <div class="cityInformation">
+            <h4>Helsinki</h4>
+            <div class="cityImgDegree">
+              <p class="cityTempurature">3°C</p>
+              <img src="resources/cloud.svg" class="iconCity">
+            </div>
+            <button type="submit" class="smallButton">&times;</button>
+          </div>
+          <ul>
+            <li> <p class="nameIndicators">Ветер</p>
+              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
+
+            <li> <p class="nameIndicators">Облачность</p>
+              <p class="indicators" >Broken clouds</p> </li>
+
+            <li> <p class="nameIndicators">Давление</p>
+              <p class="indicators" >1013 hpa</p> </li>
+
+            <li> <p class="nameIndicators">Влажность</p>
+              <p class="indicators" >52 %</p> </li>
+
+            <li> <p class="nameIndicators">Координаты</p>
+              <p class="indicators" >[59.88, 30.42]</p> </li>
+          </ul>
+        </div>
+
+        <div class="city">
+          <div class="cityInformation">
+            <h4>Praga</h4>
+            <div class="cityImgDegree">
+              <p class="cityTempurature">9°C</p>
+              <img src="resources/sun.svg" class="iconCity">
+            </div>
+            <button type="submit" class="smallButton">&times;</button>
+          </div>
+          <ul>
+            <li> <p class="nameIndicators">Ветер</p>
+              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
+
+            <li> <p class="nameIndicators">Облачность</p>
+              <p class="indicators" >Broken clouds</p> </li>
+
+            <li> <p class="nameIndicators">Давление</p>
+              <p class="indicators" >1013 hpa</p> </li>
+
+            <li> <p class="nameIndicators">Влажность</p>
+              <p class="indicators" >52 %</p> </li>
+
+            <li> <p class="nameIndicators">Координаты</p>
+              <p class="indicators" >[59.88, 30.42]</p> </li>
+          </ul>
+        </div>
+
+        <div class="city">
+          <div class="cityInformation">
+            <h4>New York</h4>
+            <div class="cityImgDegree">
+              <p class="cityTempurature">3°C</p>
+              <img src="resources/cloud.svg" class="iconCity">
+            </div>
+            <button type="submit" class="smallButton">&times;</button>
+          </div>
+          <ul>
+            <li> <p class="nameIndicators">Ветер</p>
+              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
+
+            <li> <p class="nameIndicators">Облачность</p>
+              <p class="indicators" >Broken clouds</p> </li>
+
+            <li> <p class="nameIndicators">Давление</p>
+              <p class="indicators" >1013 hpa</p> </li>
+
+            <li> <p class="nameIndicators">Влажность</p>
+              <p class="indicators" >52 %</p> </li>
+
+            <li> <p class="nameIndicators">Координаты</p>
+              <p class="indicators" >[59.88, 30.42]</p> </li>
+          </ul>
+        </div>
+      </div>
     </main>
   </body>
 </html>

@@ -1,20 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body{
-  background-color: #CEF0F8;
   overflow-x: hidden;
+  background-color: #CEF0F8;
   font-family: 'Inter';
 
   display: grid;
-  width: 100%;
+  padding: 4%;
 }
 
-header{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 5vmax;
+body > * {
+  margin-top: 1%;
+  padding: 1%;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-items: center;
 }
 
 h1{
@@ -32,9 +39,7 @@ h1{
   border-radius: 1vmax;
   width: 18.5vmax;
   height: 3.5vmax;
-  font-style: medium;
   font-size: 1.3vmax;
-  text-align: center;
 
   border: none;
   outline: none;
@@ -45,76 +50,210 @@ h1{
 
 main{
   display: grid;
-  margin: 0% 5% 5% 5%;
-
   background: #E7FBFF;
 }
+
+main > * {
+  margin-top: 1%;
+  padding: 1%;
+}
+
+/*Main City*/
 
 .gridMainCity{
   display:grid;
   grid-template-columns: 1fr 1fr;
-  margin-left: 0%;
+  grid-column-gap: 5vmax;
+}
+
+.gridMainCity > * {
+  margin: 1%;
+  padding: 1%;
 }
 
 h2{
-font-weight: lighter;
-font-size: 2vmax;
-color: #215D70;
-text-align: left;
-padding-left: 10%;
+  font-weight: lighter;
+  font-size: 2vmax;
+  color: #215D70;
 }
 
+.mainCityInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.sunMain{
-  float:left;
+.iconMain{
   width: 12vmax;
   height: 12vmax;
-  padding-left: 7%;
 }
 
-.mainDegree{
-  float:left;
+.mainTempurature{
   font-weight: lighter;
   font-size: 6vmax;
   color: #6095A5;
-  margin-left: 5%;
-  margin-top: 5%;
 }
 
-.mainInfo{
-
-  font-weight:lighter;
-  font-size: 1.3vmax;
+.mainIndicators{
+  font-weight: lighter;
   color: #E7FBFF;
+
+  display: flex;
+  align-items: center;
 }
 
-.infoRectangle {
-width: 30vmax;
-height: 3vmax;
-background: #79BACE;
-border-radius: 1vmax;
-}
 
 ul {
   list-style-type: none;
-  padding-left: 13%;
+  padding: 0;
+  margin: 2%;
+  width: 100%;
 }
 
-li{
-  margin-bottom: 2%;
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+
+  background: #79BACE;
+  border-radius: 1vmax;
+}
+
+li > * {
+  margin: 2%;
+  color: #E7FBFF;
+  font-weight: lighter;
 }
 
 .nameIndicators{
-  float:left;
-  margin-left: 5%;
-  margin-top: 2%
+  font-size: 1.2vmax;
 }
 
 .indicators{
-float:right;
-font-style: medium;
-font-size: 0.8vmax;
-margin-top: 3%;
-margin-right: 5%;
-color: #E7FBFF;
+  font-size: 0.8vmax;
+}
+
+
+/*Favourites*/
+
+.divFavourites{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 2.5vmax;
+  color: #6095A5;
+}
+
+.inputDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 50%;
+}
+
+.inputText {
+
+  width: 80%;
+
+  display: inline;
+  height: 3.5vmax;
+  font-size: 1vmax;
+  padding: 0.5% 0.5%;
+
+  border: none;
+  outline: none;
+
+  font-family: 'Inter';
+}
+
+
+.smallButton:hover {
+  background: #215D70;
+}
+
+
+.smallButton {
+  border-radius: 100%;
+  width: 3.5vmax;
+  height: 3.5vmax;
+  font-size: 2vmax;
+
+  border: none;
+  outline: none;
+
+  background: #6095A5;
+  color: #E7FBFF;
+}
+
+/*Cities*/
+
+.Cities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5%;
+}
+
+.city {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 2%;
+}
+
+.cityInformation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 95%;
+  margin: 1%;
+  padding: 1%;
+}
+
+h4 {
+  font-family: 'Inter';
+  font-size: 2vmax;
+  color: #215D70;
+  font-weight: lighter;
+}
+
+.cityImgDegree{
+  display: flex;
+  justify-content: center;
+}
+
+.iconCity {
+  width: 6vmax;
+  height: 6vmax;
+}
+
+.cityTempurature {
+  font-family: 'Inter';
+  font-size: 2vmax;
+  color: #6095A5;
+  font-weight: lighter;
+}
+
+@media all and (max-width: 1000px){
+  .gridMainCity {
+    grid-template-columns: 1fr;
+  }
+
+  .Cities {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (max-width: 360px) {
+  body{
+    overflow-x: scroll;
+  }
 }

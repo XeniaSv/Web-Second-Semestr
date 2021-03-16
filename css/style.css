@@ -10,23 +10,25 @@ body{
   font-family: 'Inter';
 
   display: grid;
-  padding: 4%;
+  margin: auto;
+  max-width: 1200px;
 }
 
 body > * {
-  margin-top: 1%;
-  padding: 1%;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  max-width: 1200px;
 }
 
 h1{
   font-weight: bold;
-  font-size: 2.5vmax;
+  font-size: 35px;
   color: #6095A5;
 }
 
@@ -36,10 +38,10 @@ h1{
 
 
 .refreshButton {
-  border-radius: 1vmax;
-  width: 18.5vmax;
-  height: 3.5vmax;
-  font-size: 1.3vmax;
+  border-radius: 20px;
+  width: 210px;
+  height: 50px;
+  font-size: 15px;
 
   border: none;
   outline: none;
@@ -51,46 +53,53 @@ h1{
 main{
   display: grid;
   background: #E7FBFF;
+  max-width: 1200px;
 }
 
 main > * {
-  margin-top: 1%;
-  padding: 1%;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 /*Main City*/
 
-.gridMainCity{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 5vmax;
+.flexMainCity{
+  display:flex;
+
+  justify-content: space-between;
+
+  align-items: center;
 }
 
 .gridMainCity > * {
-  margin: 1%;
-  padding: 1%;
+  margin: 10px;
+  padding: 10px;
 }
 
 h2{
   font-weight: lighter;
-  font-size: 2vmax;
+  font-size: 30px;
   color: #215D70;
+}
+
+.mainCity {
+  width: 50%;
 }
 
 .mainCityInfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 .iconMain{
-  width: 12vmax;
-  height: 12vmax;
+  width: 150px;
+  height: 150px;
 }
 
 .mainTempurature{
   font-weight: lighter;
-  font-size: 6vmax;
+  font-size: 80px;
   color: #6095A5;
 }
 
@@ -103,35 +112,55 @@ h2{
 }
 
 
-ul {
+.ulMainCity {
   list-style-type: none;
   padding: 0;
-  margin: 2%;
-  width: 100%;
+  margin: 20px;
+  width: 50%;
 }
 
-ul li {
+.ulMainCity .liCity {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2%;
+  margin: 10px;
 
   background: #79BACE;
-  border-radius: 1vmax;
+  border-radius: 10px;
 }
 
-li > * {
-  margin: 2%;
+.liCity > * {
+  margin: 10px;
   color: #E7FBFF;
-  font-weight: lighter;
+  font-weight: normal;
 }
+
+
+.ulCity {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px;
+  width: 100%;
+}
+
+.ulCity .liCity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+
+  background: #79BACE;
+  border-radius: 10px;
+}
+
+
 
 .nameIndicators{
-  font-size: 1.2vmax;
+  font-size: 12px;
 }
 
 .indicators{
-  font-size: 0.8vmax;
+  font-size: 11px;
 }
 
 
@@ -145,7 +174,7 @@ li > * {
 
 h3 {
   font-weight: bold;
-  font-size: 2.5vmax;
+  font-size: 30px;
   color: #6095A5;
 }
 
@@ -154,16 +183,15 @@ h3 {
   justify-content: space-between;
   align-items: center;
 
-  width: 50%;
+  width: 350px;
 }
 
 .inputText {
-
   width: 80%;
 
   display: inline;
-  height: 3.5vmax;
-  font-size: 1vmax;
+  height: 35px;
+  font-size: 12px;
   padding: 0.5% 0.5%;
 
   border: none;
@@ -180,9 +208,9 @@ h3 {
 
 .smallButton {
   border-radius: 100%;
-  width: 3.5vmax;
-  height: 3.5vmax;
-  font-size: 2vmax;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
 
   border: none;
   outline: none;
@@ -201,16 +229,15 @@ h3 {
 
 .city {
   display: flex;
-  width: 100%;
   flex-direction: column;
   align-items: center;
 
-  margin-top: 2%;
+  margin-top: 10px;
 }
 
 .cityInformation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   width: 95%;
@@ -220,31 +247,52 @@ h3 {
 
 h4 {
   font-family: 'Inter';
-  font-size: 2vmax;
+  font-size: 20px;
   color: #215D70;
   font-weight: lighter;
+
+  margin: 0;
 }
 
 .cityImgDegree{
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
 }
 
 .iconCity {
-  width: 6vmax;
-  height: 6vmax;
+  width: 55px;
+  height: 55px;
 }
 
 .cityTempurature {
   font-family: 'Inter';
-  font-size: 2vmax;
+  font-size: 20px;
   color: #6095A5;
   font-weight: lighter;
+  margin: 0;
 }
 
-@media all and (max-width: 1000px){
-  .gridMainCity {
-    grid-template-columns: 1fr;
+@media all and (max-width: 768px){
+  .flexMainCity {
+    flex-direction: column;
+  }
+
+  .ulMainCity {
+    width: 100%;
+  }
+
+  .mainCity {
+    width: 100%;
+  }
+
+  .mainCityInfo {
+    justify-content: center;
+  }
+
+  .divFavourites {
+    flex-direction: column;
   }
 
   .Cities {

@@ -32,12 +32,12 @@ h1{
   color: #6095A5;
 }
 
-.refreshButton:hover {
+.refresh-button:hover {
   background: #6095A5;
 }
 
 
-.refreshButton {
+.refresh-button {
   border-radius: 20px;
   width: 210px;
   height: 50px;
@@ -48,6 +48,11 @@ h1{
 
   background: #215D70;
   color: #E7FBFF;
+}
+
+.img-refresh {
+  width: 35px;
+  height: 35px;
 }
 
 main{
@@ -63,7 +68,7 @@ main > * {
 
 /*Main City*/
 
-.flexMainCity{
+.flex-main-city{
   display:flex;
 
   justify-content: space-between;
@@ -71,7 +76,7 @@ main > * {
   align-items: center;
 }
 
-.gridMainCity > * {
+.flex-main-city > * {
   margin: 10px;
   padding: 10px;
 }
@@ -82,44 +87,37 @@ h2{
   color: #215D70;
 }
 
-.mainCity {
+.main-city {
   width: 50%;
+  text-align: center;
 }
 
-.mainCityInfo {
+.main-city-info {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.iconMain{
+.icon-main{
   width: 150px;
   height: 150px;
 }
 
-.mainTempurature{
+.main-tempurature{
   font-weight: lighter;
   font-size: 80px;
   color: #6095A5;
 }
 
-.mainIndicators{
-  font-weight: lighter;
-  color: #E7FBFF;
 
-  display: flex;
-  align-items: center;
-}
-
-
-.ulMainCity {
+.ul-main-city {
   list-style-type: none;
   padding: 0;
   margin: 20px;
   width: 50%;
 }
 
-.ulMainCity .liCity {
+.ul-main-city li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,21 +127,21 @@ h2{
   border-radius: 10px;
 }
 
-.liCity > * {
+li > * {
   margin: 10px;
   color: #E7FBFF;
   font-weight: normal;
 }
 
 
-.ulCity {
+.ul-city {
   list-style-type: none;
   padding: 0;
   margin: 20px;
   width: 100%;
 }
 
-.ulCity .liCity {
+.ul-city li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -155,18 +153,18 @@ h2{
 
 
 
-.nameIndicators{
-  font-size: 12px;
+.name-indicators{
+  font-size: 16px;
 }
 
 .indicators{
-  font-size: 11px;
+  font-size: 16px;
 }
 
 
 /*Favourites*/
 
-.divFavourites{
+.div-favourites{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -178,7 +176,7 @@ h3 {
   color: #6095A5;
 }
 
-.inputDiv {
+.input-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -186,7 +184,7 @@ h3 {
   width: 350px;
 }
 
-.inputText {
+.input-text {
   width: 80%;
 
   display: inline;
@@ -201,12 +199,12 @@ h3 {
 }
 
 
-.smallButton:hover {
+.small-button:hover {
   background: #215D70;
 }
 
 
-.smallButton {
+.small-button {
   border-radius: 100%;
   width: 35px;
   height: 35px;
@@ -221,7 +219,7 @@ h3 {
 
 /*Cities*/
 
-.Cities {
+.cities {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 5%;
@@ -235,12 +233,12 @@ h3 {
   margin-top: 10px;
 }
 
-.cityInformation {
+.city-information {
   display: flex;
   justify-content: space-around;
   align-items: center;
 
-  width: 95%;
+  width: 75%;
   margin: 1%;
   padding: 1%;
 }
@@ -254,19 +252,19 @@ h4 {
   margin: 0;
 }
 
-.cityImgDegree{
+.city-img-degree{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 25%;
+  justify-content: space-around;
+  width: 40%;
 }
 
-.iconCity {
+.icon-city {
   width: 55px;
   height: 55px;
 }
 
-.cityTempurature {
+.city-tempurature {
   font-family: 'Inter';
   font-size: 20px;
   color: #6095A5;
@@ -275,29 +273,34 @@ h4 {
 }
 
 @media all and (max-width: 768px){
-  .flexMainCity {
+  .flex-main-city {
     flex-direction: column;
   }
 
-  .ulMainCity {
+  .ul-main-city {
     width: 100%;
   }
 
-  .mainCity {
+  .main-city {
     width: 100%;
   }
 
-  .mainCityInfo {
+  .main-city-info {
     justify-content: center;
   }
 
-  .divFavourites {
+  .div-favourites {
     flex-direction: column;
   }
 
-  .Cities {
+  .cities {
     grid-template-columns: 1fr;
   }
+
+  .refresh-button {
+    width: 55px;
+  }
+
 }
 
 @media all and (max-width: 360px) {

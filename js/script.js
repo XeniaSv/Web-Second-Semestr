@@ -1,3 +1,30 @@
+window.onload = function () {
+  buttonwith();
+  navigator.geolocation.getCurrentPosition(localCity,defaultCity);
+  pressEnter();
+
+  let keys = Object.keys(window.localStorage);
+
+  for (let key of keys) {
+    let cityName = window.localStorage.getItem(key);
+
+    let cities = document.querySelector('.cities');
+    let city = createLoadingCity();
+    cities.append(city);
+
+    let success = (data) => {
+      printCity(data, city);
+    }
+
+    let fail = (error) => {
+      alert(error);
+      city.remove();
+    }
+
+    getInfoCityName(cityName).then(success).catch(fail);
+  }
+}
+
 function buttonwith() {
 
     let width = document.documentElement.clientWidth;
@@ -7,14 +34,6 @@ function buttonwith() {
     else {
         document.getElementById("refresh").innerHTML = "Обновить геолокацию"
     }
-}
-
-
-
-window.onload = function () {
-  buttonwith();
-  navigator.geolocation.getCurrentPosition(localCity,defaultCity);
-  console.log(getInfoCityName("London"));
 }
 
 

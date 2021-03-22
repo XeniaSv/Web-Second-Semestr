@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <script src="js/fetch.js"></script>
-    <script src="js/printMainCity.js"></script>
+    <script src="js/printCities.js"></script>
+    <script src="js/addCityDelete.js"></script>
   </head>
   <body onresize="buttonwith()">
     <header>
@@ -27,118 +28,11 @@
 
           <div class="input-div">
             <input type="text" placeholder="Добавить город" class="input-text">
-            <button type="submit" class="small-button">+</button>
+            <button type="submit" class="small-button" onclick="addCity()">+</button>
           </div>
       </section>
 
       <section class="cities">
-        <div class="city">
-          <div class="city-information">
-            <h4>Moscow</h4>
-            <div class="city-img-degree">
-              <p class="city-tempurature">5°C</p>
-              <img src="resources/sun.svg" class="icon-city">
-            </div>
-            <button type="submit" class="small-button">&times;</button>
-          </div>
-          <ul class="ul-city">
-            <li> <p class="name-indicators">Ветер</p>
-              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
-
-            <li> <p class="name-indicators">Облачность</p>
-              <p class="indicators" >Broken clouds</p> </li>
-
-            <li> <p class="name-indicators">Давление</p>
-              <p class="indicators" >1013 hpa</p> </li>
-
-            <li> <p class="name-indicators">Влажность</p>
-              <p class="indicators" >52 %</p> </li>
-
-            <li> <p class="name-indicators">Координаты</p>
-              <p class="indicators" >[59.88, 30.42]</p> </li>
-          </ul>
-        </div>
-
-        <div class="city">
-          <div class="city-information">
-            <h4>Helsinki</h4>
-            <div class="city-img-degree">
-              <p class="city-tempurature">3°C</p>
-              <img src="resources/cloud.svg" class="icon-city">
-            </div>
-            <button type="submit" class="small-button">&times;</button>
-          </div>
-          <ul class="ul-city">
-            <li> <p class="name-indicators">Ветер</p>
-              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
-
-            <li> <p class="name-indicators">Облачность</p>
-              <p class="indicators" >Broken clouds</p> </li>
-
-            <li> <p class="name-indicators">Давление</p>
-              <p class="indicators" >1013 hpa</p> </li>
-
-            <li> <p class="name-indicators">Влажность</p>
-              <p class="indicators" >52 %</p> </li>
-
-            <li> <p class="name-indicators">Координаты</p>
-              <p class="indicators" >[59.88, 30.42]</p> </li>
-          </ul>
-        </div>
-
-        <div class="city">
-          <div class="city-information">
-            <h4>Praga</h4>
-            <div class="city-img-degree">
-              <p class="city-tempurature">9°C</p>
-              <img src="resources/sun.svg" class="icon-city">
-            </div>
-            <button type="submit" class="small-button">&times;</button>
-          </div>
-          <ul class="ul-city">
-            <li> <p class="name-indicators">Ветер</p>
-              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
-
-            <li> <p class="name-indicators">Облачность</p>
-              <p class="indicators" >Broken clouds</p> </li>
-
-            <li> <p class="name-indicators">Давление</p>
-              <p class="indicators" >1013 hpa</p> </li>
-
-            <li> <p class="name-indicators">Влажность</p>
-              <p class="indicators" >52 %</p> </li>
-
-            <li> <p class="name-indicators">Координаты</p>
-              <p class="indicators" >[59.88, 30.42]</p> </li>
-          </ul>
-        </div>
-
-        <div class="city">
-          <div class="city-information">
-            <h4>New York</h4>
-            <div class="city-img-degree">
-              <p class="city-tempurature">3°C</p>
-              <img src="resources/cloud.svg" class="icon-city">
-            </div>
-            <button type="submit" class="small-button">&times;</button>
-          </div>
-          <ul class="ul-city">
-            <li> <p class="name-indicators">Ветер</p>
-              <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
-
-            <li> <p class="name-indicators">Облачность</p>
-              <p class="indicators" >Broken clouds</p> </li>
-
-            <li> <p class="name-indicators">Давление</p>
-              <p class="indicators" >1013 hpa</p> </li>
-
-            <li> <p class="name-indicators">Влажность</p>
-              <p class="indicators" >52 %</p> </li>
-
-            <li> <p class="name-indicators">Координаты</p>
-              <p class="indicators" >[59.88, 30.42]</p> </li>
-          </ul>
-        </div>
       </section>
     </main>
 
@@ -168,6 +62,37 @@
         <li> <p class="name-indicators">Координаты</p>
           <p class="indicators"></p> </li>
       </ul>
+    </template>
+
+    <template id="templateCity">
+        <div class="city-information">
+          <h4></h4>
+          <div class="city-img-degree">
+            <p class="city-tempurature"></p>
+            <img class="icon-city">
+          </div>
+          <button type="submit" class="small-button" onclick="deleteCity(this)">&times;</button>
+        </div>
+        <ul class="ul-city">
+          <li> <p class="name-indicators">Ветер</p>
+            <p class="indicators"></p></li>
+
+          <li> <p class="name-indicators">Облачность</p>
+            <p class="indicators" ></p></li>
+
+          <li> <p class="name-indicators">Давление</p>
+            <p class="indicators" ></p></li>
+
+          <li> <p class="name-indicators">Влажность</p>
+            <p class="indicators" ></p></li>
+
+          <li> <p class="name-indicators">Координаты</p>
+            <p class="indicators" ></p></li>
+        </ul>
+    </template>
+
+    <template id="templateLoading">
+      <h4>Загрузка...</h4>
     </template>
   </body>
 </html>

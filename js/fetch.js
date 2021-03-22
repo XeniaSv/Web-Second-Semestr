@@ -1,5 +1,5 @@
 const api = '3936fadeae5ac4446c2f0a9102d226f6';
-const query = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=${api}&`
+const query = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=${api}&lang=ru&`
 
 async function getInformation(suffix) {
   let url = query + suffix;

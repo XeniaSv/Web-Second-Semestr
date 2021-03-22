@@ -8,41 +8,18 @@
     <meta name="keywords" content="forecast, weather">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js">
-
-    </script>
+    <script src="js/script.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="js/printMainCity.js"></script>
   </head>
   <body onresize="buttonwith()">
     <header>
       <h1>Погода здесь</h1>
-      <button type="refresh" id="refresh" class="refresh-button">Обновить геолокацию</button>
+      <button type="refresh" id="refresh" class="refresh-button" onclick="refreshButton()">Обновить геолокацию</button>
     </header>
     <main>
       <section class="flex-main-city">
-        <div class="main-city">
-          <h2>Saint-Petersburg</h2>
-          <div class="main-city-info">
-            <img src="resources/sun.svg" class="icon-main">
-            <p class="main-tempurature">8°C</p>
-          </div>
-        </div>
-
-        <ul class="ul-main-city">
-          <li> <p class="name-indicators">Ветер</p>
-            <p class="indicators">Moderat breeze , 6.0 m/s, North-northwest</p> </li>
-
-          <li> <p class="name-indicators">Облачность</p>
-            <p class="indicators" >Broken clouds</p> </li>
-
-          <li> <p class="name-indicators">Давление</p>
-            <p class="indicators" >1013 hpa</p> </li>
-
-          <li> <p class="name-indicators">Влажность</p>
-            <p class="indicators" >52 %</p> </li>
-
-          <li> <p class="name-indicators">Координаты</p>
-            <p class="indicators" >[59.88, 30.42]</p> </li>
-        </ul>
+        <h2>Загрузка...</h2>
       </section>
 
       <section class="div-favourites">
@@ -164,5 +141,33 @@
         </div>
       </section>
     </main>
+
+
+    <template id="templateMainCity">
+      <div class="main-city">
+        <h2></h2>
+        <div class="main-city-info">
+          <img class="icon-main">
+          <p class="main-tempurature"></p>
+        </div>
+      </div>
+
+      <ul class="ul-main-city">
+        <li> <p class="name-indicators">Ветер</p>
+          <p class="indicators"></p> </li>
+
+        <li> <p class="name-indicators">Облачность</p>
+          <p class="indicators"></p> </li>
+
+        <li> <p class="name-indicators">Давление</p>
+          <p class="indicators"></p> </li>
+
+        <li> <p class="name-indicators">Влажность</p>
+          <p class="indicators"></p> </li>
+
+        <li> <p class="name-indicators">Координаты</p>
+          <p class="indicators"></p> </li>
+      </ul>
+    </template>
   </body>
 </html>

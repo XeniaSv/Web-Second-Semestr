@@ -18,6 +18,7 @@ function printMainCity(data){
 }
 
 function printCity(data, city) {
+  console.log(data);
   city.innerHTML = "";
 
   let templateCity = document.querySelector('#templateCity');

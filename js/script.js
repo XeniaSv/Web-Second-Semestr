@@ -5,24 +5,22 @@ window.onload = async function () {
 
   let keys = Object.keys(window.localStorage);
 
-  for (let key of keys) {
-    let cityName = window.localStorage.getItem(key);
+  let requests = keys.map(key => getInfoCityName(window.localStorage.getItem(key)))
 
-    let cities = document.querySelector('.cities');
-    let city = createLoadingCity();
-    cities.append(city);
-
-    let success = (data) => {
+  Promise.all(requests)
+  .then(responses => responses.forEach(
+    data => {
+      let cities = document.querySelector('.cities');
+      let city = createLoadingCity();
+      cities.append(city);
       printCity(data, city);
     }
-
-    let fail = (error) => {
-      alert(error);
-      city.remove();
-    }
-
-    getInfoCityName(cityName).then(success).catch(fail);
-  }
+  ))
+  //Error
+  .catch(error => {
+    console.log(error);
+    //city.remove();
+  })
 }
 
 function buttonwith() {

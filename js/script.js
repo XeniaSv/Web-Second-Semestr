@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = async function () {
   buttonwith();
   navigator.geolocation.getCurrentPosition(localCity,defaultCity);
   pressEnter();
@@ -37,38 +37,44 @@ function buttonwith() {
 }
 
 
-function defaultCity() {
+let success = (data) => {
+  printMainCity(data);
+}
+
+let fail = (error) => {
+  alert(error);
+}
+
+
+async function defaultCity() {
   let nameCity = 'Saint Petersburg';
-
-  let success = (data) => {
-    printMainCity(data);
-  }
-
-  let fail = (error) => {
-    alert(error);
-  }
 
   getInfoCityName(nameCity).then(success).catch(fail);
 }
 
-function localCity(position) {
+async function localCity(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
 
-  let success = (data) => {
-    printMainCity(data);
-  }
-
-  let fail = (error) => {
-    alert(error);
-  }
 
   getInfoCoordinats(lat,lon).then(success).catch(fail);
 }
 
 
 function refreshButton() {
-  navigator.geolocation.getCurrentPosition(localCity,defaultCity);
-  let flexMainCity = document.querySelector('.flex-main-city');
-  flexMainCity.innerHTML = "<h2>Загрузка...</h2>";
+  navigator.geolocation.getCurrentPosition(localCity, defaultCity);
+  let divMainCity = document.querySelector('.flex-main-city');
+
+  divMainCity.querySelector('h2').textContent = "Загрузка...";
+  divMainCity.querySelector('.icon-main').src = "resources/loading.png";
+  divMainCity.querySelector('.main-tempurature').innerHTML = '...';
+
+  let ulMainCity = divMainCity.querySelector('.ul-main-city');
+  let indicators = ulMainCity.querySelectorAll('.indicators');
+
+  indicators[0].textContent = '...';
+  indicators[1].textContent = '...';
+  indicators[2].textContent = '...';
+  indicators[3].textContent = '...';
+  indicators[4].textContent = '...';
 }

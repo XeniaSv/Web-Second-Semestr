@@ -1,11 +1,6 @@
-function addCity() {
+async function addCity() {
   let text = document.querySelector('.input-text').value.toLowerCase();
   document.querySelector('.input-text').value = "";
-
-  if (window.localStorage.getItem(text) !== null) {
-    console.log("City exist");
-    return;
-  }
 
   let cities = document.querySelector('.cities');
 
@@ -14,6 +9,12 @@ function addCity() {
   cities.append(city);
 
   let success = (data) => {
+    if (window.localStorage.getItem(data.name.toLowerCase()) !== null) {
+      alert("Город уже существует");
+      city.remove();
+      return;
+    }
+
     window.localStorage.setItem(data.name.toLowerCase(), data.name);
     printCity(data, city);
   }

@@ -9,13 +9,16 @@ async function addCity() {
   cities.append(city);
 
   let success = (data) => {
-    if (window.localStorage.getItem(data.name.toLowerCase()) !== null) {
-      alert("Город уже существует");
-      city.remove();
-      return;
+    for (let i = 0; i < window.localStorage.length; i++) {
+      if (data.name === window.localStorage.getItem(i)) {
+        alert("Город уже существует");
+        city.remove();
+        return;
+      }
     }
 
-    window.localStorage.setItem(data.name.toLowerCase(), data.name);
+    city.setAttribute("id", window.localStorage.length)
+    window.localStorage.setItem(window.localStorage.length, data.name);
     printCity(data, city);
   }
 
@@ -50,7 +53,14 @@ function pressEnter() {
 }
 
 function deleteCity(btn) {
-  let cityName = btn.parentElement.querySelector('h4').textContent.toLowerCase();
-  window.localStorage.removeItem(cityName);
+  let id = btn.parentElement.parentElement.id;
+  window.localStorage.removeItem(id);
   btn.parentElement.parentElement.remove();
+
+  let cities = document.querySelectorAll('.city')
+  for (let i = 0; i < window.localStorage.length; i++) {
+    window.localStorage.removeItem(cities[i].id);
+    cities[i].id = i;
+    window.localStorage.setItem(i, cities[i].querySelector('h4').textContent)
+  }
 }

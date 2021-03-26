@@ -3,7 +3,12 @@ window.onload = async function () {
   navigator.geolocation.getCurrentPosition(localCity,defaultCity);
   pressEnter();
 
-  let keys = Object.keys(window.localStorage);
+  let i = -1;
+
+  let keys = [];
+  for (let j = 0; j < window.localStorage.length; j++) {
+    keys.push(j);
+  }
 
   let requests = keys.map(key => getInfoCityName(window.localStorage.getItem(key)))
 
@@ -12,6 +17,7 @@ window.onload = async function () {
     data => {
       let cities = document.querySelector('.cities');
       let city = createLoadingCity();
+      city.setAttribute("id", ++i);
       cities.append(city);
       printCity(data, city);
     }

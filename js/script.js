@@ -3,30 +3,31 @@ window.onload = async function () {
   navigator.geolocation.getCurrentPosition(localCity,defaultCity);
   pressEnter();
 
-  let i = -1;
-
-  let keys = [];
-  for (let j = 0; j < window.localStorage.length; j++) {
-    keys.push(j);
-  }
-
-  let requests = keys.map(key => getInfoCityName(window.localStorage.getItem(key)))
-
-  Promise.all(requests)
-  .then(responses => responses.forEach(
-    data => {
+  let onSuccess = (cities) => {
+    for (let cityName of cities.favouriteCities) {
       let cities = document.querySelector('.cities');
       let city = createLoadingCity();
-      city.setAttribute("id", ++i);
       cities.append(city);
-      printCity(data, city);
+      
+      let onSuccessCity = (data) => {
+        printCity(data, city);
+      }
+
+      let onFailCity = (e) => {
+        alert(e);
+        city.remove();
+        return;
+      }
+
+      getInfoCityName(cityName).then(onSuccessCity).catch(onFailCity);
     }
-  ))
-  //Error
-  .catch(error => {
-    console.log(error);
-    //city.remove();
-  })
+  }
+
+  let onFail = (e) => {
+    alert(e);
+  }
+
+  getListOfFavourites().then(onSuccess).catch(onFail);
 }
 
 function buttonwith() {
@@ -59,7 +60,6 @@ async function defaultCity() {
 async function localCity(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-
 
   getInfoCoordinats(lat,lon).then(success).catch(fail);
 }

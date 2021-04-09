@@ -1,4 +1,5 @@
 # Web-Second-Semestr
+## [GitHub Padges](https://xeniasv.github.io/Web-Second-Semestr/)
 ## [Сервер](https://github.com/XeniaSv/Web-Second-Semestr-Server)
 ## Лабораторная работа №3
 Необходимо доработать лабораторную работу №2, добавив реализацию серверной части приложения. Серверная часть реализуется на NodeJS, допустимо использовать фреймворки вроде Express или Sails.

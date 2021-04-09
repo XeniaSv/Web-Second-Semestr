@@ -1,4 +1,4 @@
-const serverURL = "http://localhost:3000";
+const serverURL = "https://cryptic-tundra-69345.herokuapp.com";
 const weatherURL = `${serverURL}/weather/city`;
 const weatherCoordinatesURL = `${serverURL}/weather/coordinates`;
 const favouritesURL = `${serverURL}/favourites`;

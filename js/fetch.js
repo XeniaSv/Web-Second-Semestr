@@ -29,7 +29,7 @@ async function getListOfFavourites() {
 
 async function addCityToFavourites(cityName) {
   let data = await fetch(`${favouritesURL}?q=${cityName}`, {method: "POST"});
-  if (data.status === 200) {
+  if (data.status === 201) {
     return await data.json();
   }
 
@@ -43,7 +43,7 @@ async function addCityToFavourites(cityName) {
 async function deleteCityFromFavourites(cityName) {
   let data = await fetch (`${favouritesURL}?q=${cityName}`, {method: "DELETE"});
 
-  if (data.status === 200) {
+  if (data.status === 204) {
     return true;
   }
 
